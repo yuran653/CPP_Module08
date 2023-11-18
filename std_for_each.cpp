@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   EasyFind.tpp                                       :+:      :+:    :+:   */
+/*   std_for_each.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 12:19:26 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/18 12:29:28 by jgoldste         ###   ########.fr       */
+/*   Created: 2023/11/18 14:34:40 by jgoldste          #+#    #+#             */
+/*   Updated: 2023/11/18 14:39:58 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_TPP
-#define EASYFIND_TPP
+#include <iostream>
+#include <set>
+#include <algorithm>
 
-#include "EasyFind.hpp"
-
-template <typename T>
-typename T::iterator easyFind(T& container, int value) {
-	typename T::iterator it = std::find(container.begin(), container.end(), value);
-	if (it == container.end())
-		std::cerr << "The value is not found" << std::endl;
-	return it;
+void printSetValue(const int& n) {
+	std::cout << "Set<int> value: " << n << std::endl;
 }
 
-#endif
+int main() {
+	std::set<int> mySet;
+	for (int i = 0; i < 5; i++)
+		mySet.insert(i);
+
+	std::for_each(mySet.begin(), mySet.end(), printSetValue);
+	return 0;
+}
