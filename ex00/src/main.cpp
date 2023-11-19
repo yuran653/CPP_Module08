@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:18:49 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/18 15:24:45 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/19 16:29:50 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int main() {
 	value = randomNumberGenerator();
 	std::cout << "Generated value to find: " << value << std::endl;
 	std::set<int> mySet;
-	for (int i = 0; i < SIZE; i += 2)
+	for (int i = 0; i < SIZE; i++)
 		mySet.insert(randomNumberGenerator());
 	std::for_each(mySet.begin(), mySet.end(), printSetValue);
 	std::set<int>::iterator itSet = easyFind(mySet, value);
@@ -80,12 +80,6 @@ int main() {
 	// ============= End =============
 
 	std::cout << std::endl;
-
-	// ===== Container adaptors =====
-	value = randomNumberGenerator();
-	std::cout << "Generated value to find: " << value << std::endl;
-	std::stack 
-	// ============= End =============
 	
 	return 0;
 }
