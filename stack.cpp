@@ -6,25 +6,31 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 15:36:27 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/18 15:37:14 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:30:09 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <stack>
 #include <vector>
+#include <list>
 
 int main() {
-    // Creating a stack of integers using a vector as the underlying container
-    std::stack<int, std::vector<int> > myStack;
+    std::stack<int, std::list<int> > myStack;
 
-    myStack.push(10);
-    myStack.push(20);
-    myStack.push(30);
+    for (int i = 0; i < 5; ++i) {
+        myStack.push(i);
+    }
 
-    std::cout << "Top element: " << myStack.top() << std::endl;
-    myStack.pop();
-    std::cout << "After popping, new top element: " << myStack.top() << std::endl;
+    // Access the underlying container (std::vector in this case)
+    std::list<int>& myVector = *reinterpret_cast<std::list<int>*>(&myStack);
+
+    // Now you can iterate through the elements using iterators
+    for (std::list<int>::iterator it = myVector.begin(); it != myVector.end(); ++it) {
+        std::cout << *it << " " << std::endl;
+    }
+
+    std::cout << "Stack top: " << myStack.top() << std::endl;
 
     return 0;
 }

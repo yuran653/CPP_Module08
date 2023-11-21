@@ -6,15 +6,15 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:18:49 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/19 16:29:50 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:23:28 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <algorithm>
 #include <ctime>
 #include <iostream>
+#include <list>
 #include <set>
-#include <stack>
 #include <vector>
 #include <deque>
 #include "EasyFind.hpp"
@@ -63,6 +63,23 @@ int main() {
 	std::deque<int>::iterator itDeque = easyFind(myDeque, value);
 	if (itDeque != myDeque.end())
 		std::cout << "The found value is: " << *itDeque << std::endl;
+	
+	std::cout << std::endl;
+
+	value = randomNumberGenerator();
+	std::cout << "Generated value to find: " << value << std::endl;
+	std::list<int> myList;
+	std::list<int>::iterator itList = myList.begin();
+	while (myList.size() < SIZE ) {
+		myList.push_front(randomNumberGenerator());
+		myList.push_back(randomNumberGenerator());
+		myList.insert(++itList, randomNumberGenerator());
+	}
+	for (itList = myList.begin(); itList != myList.end(); itList++)
+		std::cout << "List<int> value: " << *itList << std::endl;
+	itList = easyFind(myList, value);
+	if (itList != myList.end())
+		std::cout << "The found value is: " << *itList << std::endl;
 	// ============= End =============
 
 	std::cout << std::endl;
