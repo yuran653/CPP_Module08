@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:43:06 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/15 19:44:14 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:24:21 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int main() {
 	for (std::vector<char>::iterator it = myVector.begin(); it != myVector.end(); it++) {
 		std::cout << *it << std::endl;
 	}
+
+	std::vector<char>::iterator it = myVector.end();
+	std::cout << "  The end: [" << *it << "]" << std::endl;
+	--it;
+	std::cout << "The end--: [" << *it << "]" << std::endl;
 
 	return 0;
 }
