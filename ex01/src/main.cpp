@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:20:39 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/23 19:38:08 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:42:40 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include "Span.hpp"
 
-#define SIZE 10
+#define SIZE 1000000
 
 int randomNumberGenerator() {
 	return std::rand() % (SIZE);
@@ -27,6 +27,7 @@ int main () {
 	Span span(SIZE);
 	for (int i = 0; i < SIZE; i++) {
 		span.addNumber(randomNumberGenerator());
+		// span.addNumber(i);
 	}
 	try {
 		std::cout << "The longest span is: " << span.longestSpan() << std::endl;

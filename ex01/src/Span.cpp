@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:21:32 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/23 19:38:37 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:40:17 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,9 @@ void	Span::addNumber(int number) {
 	_span->insert(number);
 }
 
-// unsigned int	Span::shortestSpan() {
-// }
-#include <iostream>
 unsigned int	Span::longestSpan() {
 	if (_size < 2)
 		throw SpanSizeError();
-	// std::cout << "Span end: " << *(--_span->end()) << std::endl;
-	// std::cout << "Span begin: " << *(_span->begin()) << std::endl;
 	return (*(--_span->end()) - *(_span->begin()));
 }
 
