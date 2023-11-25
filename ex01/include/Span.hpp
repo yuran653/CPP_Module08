@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:21:07 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/24 04:34:54 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/25 20:11:00 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,17 @@ class Span {
 		unsigned int	longestSpan();
 		
 	class SpanIsFull : public std::exception {
-		const char* what() const throw() {
-			return "The span is full";
-		}
+		public:
+			const char* what() const throw() {
+				return "The span is full";
+			}
 	};
 	
 	class NotEnoughNumbers : public std::exception {
-		const char* what() const throw() {
-			return "Not enough numbers in the span";
-		}
+		public:
+			const char* what() const throw() {
+				return "Not enough numbers in the span";
+			}
 	};
 };
 
