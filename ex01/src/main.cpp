@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:20:39 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/25 20:25:39 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/25 20:33:49 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ int randomNumberGenerator() {
 
 int main () {
 	std::srand(std::time(0));
+
+	// Span test_exception(MAX_SIZE);
+	// test_exception.addNumber(1);
+	// try {
+	// 	std::cout << "The shortest span1 is: " << test_exception.shortestSpan() << std::endl;
+	// } catch (const Span::SpanIsFull& e) {
+	// 	std::cerr << "Exception caught: " << e.what() << std::endl;
+	// }
 
 	std::cout << std::endl;
 
