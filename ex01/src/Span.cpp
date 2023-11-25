@@ -6,18 +6,18 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:21:32 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/23 19:40:17 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/24 05:26:23 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int size) : _size(size), _span(NULL) {
+Span::Span(unsigned int max_size) : _max_size(max_size), _span(NULL) {
 	_span = new std::multiset<int>;
 }
 
 Span::Span(const Span& other)
-	: _size(other._size), _span(new std::multiset<int>(*other._span)) {
+	: _max_size(other._max_size), _span(new std::multiset<int>(*other._span)) {
 }
 
 Span::~Span() {
@@ -27,19 +27,40 @@ Span::~Span() {
 Span& Span::operator=(const Span& other) {
 	if (this != &other) {
 		delete _span;
-		_size = other._size;
+		_max_size = other._max_size;
 		_span = new std::multiset<int>(*other._span);
 	}
 	return *this;
 }
 
 void	Span::addNumber(int number) {
+	if (_span->size() >= _max_size)
+		throw SpanIsFull();
 	_span->insert(number);
 }
 
+unsigned int	Span::shortestSpan() {
+	if (_span->size() < 2)
+		throw NotEnoughNumbers();
+	unsigned int next;
+	unsigned int prev;
+	unsigned int shortest_span = 0;
+	std::multiset<int>::iterator it = _span->begin();
+	while (true) {
+		prev = *it;
+		std::advance(it, 1);
+		if (it == _span->end())
+			return shortest_span;
+		next = *it;
+		shortest_span = next - prev;
+		if (shortest_span == 0)
+			return 0;
+	}
+}
+
 unsigned int	Span::longestSpan() {
-	if (_size < 2)
-		throw SpanSizeError();
+	if (_span->size() < 2)
+		throw NotEnoughNumbers();
 	return (*(--_span->end()) - *(_span->begin()));
 }
 
