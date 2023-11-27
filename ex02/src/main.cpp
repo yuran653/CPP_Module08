@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:23:15 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/26 18:33:29 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:43:41 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,15 @@ int main () {
 			mutant_1.pop();
 			stack_1.pop();
 		}
-		if (mutant_1.empty() == false ) {
+		if (mutant_1.empty() == true && stack_1.empty() == true)
+			std::cout << "\'mutant_1\' and \'stack_1\' are empty: OK" << std::endl;
+		else if (mutant_1.empty() == false ) {
 			std::cerr << "\'mutant_1\' is NOT empty: KO" << std::endl;
 			if (stack_1.empty() == false) {
 				std::cerr << "\'stack_1\' is NOT empty: KO" << std::endl;
 			return 1;
+			}
 		}
-		else
-			std::cout 
 	}
 	else {
 		std::cerr << "Sizes of \'mutant_1\' and \'stack_1\' are NOT equal: KO" << std::endl;
