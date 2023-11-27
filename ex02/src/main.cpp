@@ -6,12 +6,13 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:23:15 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/27 13:43:41 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:10:22 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctime>
 #include <iostream>
+#include <cstdlib>
 #include "MutantStack.hpp"
 
 #define SIZE 20

@@ -6,14 +6,14 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:20:39 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/11/25 20:33:49 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:01:16 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <climits>
 #include <ctime>
 #include <cstdlib>
-#include <limits>
 #include "Span.hpp"
 
 #define MAX_SIZE 1000000
